@@ -17,5 +17,5 @@ setup(
     license="GPL",
     ext_modules=cythonize(ext_modules),
     package_dir={"": "src/dfit"},
-    install_requires=["pandas>=1.1.4", "numpy>=1.19.4", "scipy>=1.5.4"],
+    install_requires=["pandas>=1.1.4", "numpy>=1.19.4", "scipy>=1.5.4", "matplotlib>=3.3.3"],
 )
