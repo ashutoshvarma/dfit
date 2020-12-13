@@ -233,7 +233,7 @@ cdef class DFit:
             self._aic[distribution] = np.inf
             self._bic[distribution] = np.inf
             self._kl[distribution] = np.inf
-            logging.warning(f"FAILED to fit {distribution} - {ex.message}")
+            logging.warning(f"FAILED to fit {distribution} - {str(ex)}")
 
 
     def plot_hist(self):
