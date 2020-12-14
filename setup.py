@@ -2,6 +2,7 @@ from setuptools import Extension, setup
 from Cython.Build import cythonize
 import numpy as np
 
+version = "0.0.1a1"
 
 ext_modules = [
     Extension(
@@ -13,6 +14,7 @@ ext_modules = [
 
 setup(
     name="dfit",
+    version=version,
     author="Ashutosh Varma",
     license="GPL",
     ext_modules=cythonize(ext_modules),
