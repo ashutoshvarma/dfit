@@ -1,43 +1,77 @@
-cdef object threading
-import threading
-
 cdef object sys
 import sys
 
+cdef object traceback
+import traceback
 
-def _timed_run(func, tuple args=(), dict kwargs={}, timeout=30, default=None):
-    """This function will spawn a thread and run the given function
-    using the args, kwargs and return the given default value if the
-    timeout is exceeded.
+cdef object MpTimeoutError
+from multiprocessing import TimeoutError as MpTimeoutError
 
-    http://stackoverflow.com/questions/492519/timeout-on-a-python-function-call
+cdef object Queue_Empty
+from queue import Empty as Queue_Empty
+
+cdef object Queue
+from queue import Queue
+
+cdef object start_new_thread
+from _thread import start_new_thread
+
+
+class TimeoutError(Exception):
+    pass
+
+
+def async_raise(long tid, object exception=Exception):
     """
+    Raise an Exception in the Thread with id `tid`. Perform cleanup if
+    needed.
+    Based on Killable Threads By Tomer Filiba
+    from http://tomerfiliba.com/recipes/Thread2/
+    license: public domain.
+    """
+    res = cpython.PyThreadState_SetAsyncExc(tid, <PyObject*>exception)
+    if res == 0:
+        raise ValueError('Invalid thread id.')
+    elif res != 1:
+        # if it returns a number greater than one, you're in trouble,
+        # and you should call it again with exc=NULL to revert the effect
+        cpython.PyThreadState_SetAsyncExc(tid, <PyObject*>NULL)
+        raise SystemError('PyThreadState_SetAsyncExc failed.')
 
-    class InterruptableThread(threading.Thread):
-        def __init__(self):
-            threading.Thread.__init__(self)
-            self.result = default
-            self.exc_info = (None, None, None)
 
-        def run(self):
-            try:
-                self.result = func(args, **kwargs)
-            except Exception as err:
-                self.exc_info = sys.exc_info()
+def interrupt_func(func, args=None, kwargs=None, timeout=30, q=None):
+    """
+    Threads-based interruptible runner, but is not reliable and works
+    only if everything is pickable.
+    """
+    cdef:
+        long tid
 
-        def suicide(self):
-            raise RuntimeError(f"Timeout (taking more than {timeout} sec)")
+    # We run `func` in a thread and block on a queue until timeout
+    if not q:
+        q = Queue()
 
-    it = InterruptableThread()
-    it.start()
-    it.join(timeout)
+    def runner():
+        try:
+            _res = func(*(args or ()), **(kwargs or {}))
+            q.put((None, _res))
+        except TimeoutError:
+            # rasied by async_rasie to kill the orphan threads
+            pass
+        except Exception as ex:
+            q.put((ex, None))
 
-    if it.exc_info[0] is not None:
-        a, b, c = it.exc_info
-        raise Exception(a, b, c)  # communicate that to caller
+    tid = start_new_thread(runner, ())
 
-    if it.isAlive():
-        it.suicide()
-        raise RuntimeError
-    else:
-        return it.result
+    try:
+        err, res = q.get(timeout=timeout)
+        if err:
+            raise err
+        return res
+    except (Queue_Empty, MpTimeoutError):
+        raise TimeoutError(f"Timeout (taking more than {timeout} sec)")
+    finally:
+        try:
+            async_raise(tid, TimeoutError)
+        except (SystemExit, ValueError):
+            pass

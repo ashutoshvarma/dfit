@@ -3,6 +3,8 @@
 # cython: language_level = 3
 
 cimport cython
+cimport cpython
+from cpython.ref cimport PyObject
 cimport numpy as cnp
 
 cdef object logging
@@ -198,7 +200,7 @@ cdef class DFit:
 
         dist = _ALL_DISTS[distribution]
         try:
-            param = _timed_run(dist.fit, args=(self._trim_data, ), timeout=self.timeout)
+            param = interrupt_func(dist.fit, args=(self._trim_data, ), timeout=self.timeout)
 
             # assuming the `fit` return param in same order as in pdf
             fitted_pdf = dist.pdf(self._x, *param)
@@ -228,7 +230,7 @@ cdef class DFit:
             self._bic[distribution] = bic
             self._kl[distribution] = kl
             # print(f"Fitted {distribution} with sq_error={sq_error}")
-        except Exception as ex:
+        except TimeoutError as ex:
             self._sq_errors[distribution] = np.inf
             self._aic[distribution] = np.inf
             self._bic[distribution] = np.inf
