@@ -2,7 +2,7 @@ from setuptools import Extension, setup
 from Cython.Build import cythonize
 import numpy as np
 
-version = "0.0.1a1"
+version = "0.0.1a2"
 
 ext_modules = [
     Extension(
