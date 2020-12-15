@@ -21,7 +21,7 @@ class TimeoutError(Exception):
     pass
 
 
-def async_raise(long tid, object exception=Exception):
+cdef int async_raise(long tid, object exception=Exception) except -1:
     """
     Raise an Exception in the Thread with id `tid`. Perform cleanup if
     needed.
