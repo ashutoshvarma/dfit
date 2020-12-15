@@ -39,7 +39,7 @@ cdef int async_raise(long tid, object exception=Exception) except -1:
         raise SystemError('PyThreadState_SetAsyncExc failed.')
 
 
-def interrupt_func(func, args=None, kwargs=None, timeout=30, q=None):
+def interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):
     """
     Threads-based interruptible runner, but is not reliable and works
     only if everything is pickable.
@@ -53,7 +53,7 @@ def interrupt_func(func, args=None, kwargs=None, timeout=30, q=None):
 
     def runner():
         try:
-            _res = func(*(args or ()), **(kwargs or {}))
+            _res = func(*args, **kwargs)
             q.put((None, _res))
         except TimeoutError:
             # rasied by async_rasie to kill the orphan threads
@@ -64,10 +64,10 @@ def interrupt_func(func, args=None, kwargs=None, timeout=30, q=None):
     tid = start_new_thread(runner, ())
 
     try:
-        err, res = q.get(timeout=timeout)
-        if err:
-            raise err
-        return res
+        resp = q.get(timeout=timeout)
+        if resp[0]:
+            raise resp[0]
+        return resp[1]
     except (Queue_Empty, MpTimeoutError):
         raise TimeoutError(f"Timeout (taking more than {timeout} sec)")
     finally:
