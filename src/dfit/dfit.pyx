@@ -45,9 +45,17 @@ logger = logging.getLogger(__name__)
 include "interrupt.pxi"
 
 # UTILITY
-cdef _scipy_dists():
+cdef dict _scipy_dists():
+    cdef:
+        dict dists
+        Py_ssize_t i, ln
+        str attr_str
+        object attr
+    
     dists = {}
-    for attr_str in sp_stats.__all__:
+    ln = len(sp_stats.__all__)
+    for i in range(ln):
+        attr_str = sp_stats.__all__[i]
         attr = getattr(sp_stats, attr_str)
         if getattr(attr, "fit", None):
             dists[attr_str] = attr
