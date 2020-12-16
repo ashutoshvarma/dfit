@@ -22,6 +22,9 @@ import scipy.stats as sp_stats
 cdef object kl_div
 from scipy.stats import entropy as kl_div
 
+cdef object kstest
+from scipy.stats import kstest
+
 cdef pd
 import pandas as pd
 
@@ -56,12 +59,17 @@ cdef dict _scipy_dists():
     ln = len(sp_stats.__all__)
     for i in range(ln):
         attr_str = sp_stats.__all__[i]
+        if attr_str in _BLACKLIST:
+            continue
         attr = getattr(sp_stats, attr_str)
         if getattr(attr, "fit", None):
             dists[attr_str] = attr
     return dists
 
 cdef:
+    # NOTE: "kstwo" is blaclisted for now, for some reasons (bugs?)
+    # it is not fitting any data.
+    list _BLACKLIST = ["rv_histogram", "rv_continuous", "kstwo"]
     dict _ALL_DISTS = _scipy_dists()
     list ALL_DISTRIBUTIONS = list(_ALL_DISTS.keys())
     list POPULAR_DISTRIBUTIONS = [
@@ -102,6 +110,7 @@ cdef class DFit:
         dict _aic
         dict _bic
         dict _kl
+        dict _ks
         # public properties
         public dict fitted_param
         public dict fitted_pdf
@@ -153,6 +162,7 @@ cdef class DFit:
         self._aic = {}
         self._bic = {}
         self._kl = {}
+        self._ks = {}
         self.fitted_param = {}
         self.fitted_pdf = {}
 
@@ -200,8 +210,12 @@ cdef class DFit:
     def _fit_distribution(self, str distribution):
         cdef:
             tuple param
-            cnp.ndarray pdf_fitted
+            cnp.ndarray fitted_pdf
+            Py_ssize_t k, n
+            object dist
+            object _freeze_dist
 
+        # supress warnings
         cdef object warnings
         import warnings
         warnings.filterwarnings("ignore", category=RuntimeWarning)
@@ -209,9 +223,10 @@ cdef class DFit:
         dist = _ALL_DISTS[distribution]
         try:
             param = interrupt_func(dist.fit, args=(self._trim_data, ), timeout=self.timeout)
-
             # assuming the `fit` return param in same order as in pdf
-            fitted_pdf = dist.pdf(self._x, *param)
+            _freeze_dist = dist(*param)
+
+            fitted_pdf = _freeze_dist.pdf(self._x)
 
             self.fitted_param[distribution] = param[:]
             self.fitted_pdf[distribution] = fitted_pdf
@@ -222,7 +237,7 @@ cdef class DFit:
             )
 
             # AIC & BIC
-            log_likelihood = np.sum(dist.logpdf(self._x, *param))
+            log_likelihood = np.sum(_freeze_dist.logpdf(self._x))
             k = len(param)
             n = len(self._trim_data)
             aic = (2 * k) - (2 * log_likelihood)
@@ -233,16 +248,20 @@ cdef class DFit:
             # as if p=0 then 1 * np.log(q/p) will be inf
             kl = kl_div(fitted_pdf, self._pdf)
 
+            # ks test
+            ks, _ = kstest(self._trim_data, _freeze_dist.cdf)
+
             self._sq_errors[distribution] = sq_error
             self._aic[distribution] = aic
             self._bic[distribution] = bic
             self._kl[distribution] = kl
-            # print(f"Fitted {distribution} with sq_error={sq_error}")
+            self._ks[distribution] = ks
         except TimeoutError as ex:
             self._sq_errors[distribution] = np.inf
             self._aic[distribution] = np.inf
             self._bic[distribution] = np.inf
             self._kl[distribution] = np.inf
+            self._ks[distribution] = np.inf
             logging.warning(f"FAILED to fit {distribution} - {str(ex)}")
 
 
@@ -259,9 +278,11 @@ cdef class DFit:
                 'ss_error': self._sq_errors,
                 'aic': self._aic,
                 'bic': self._bic,
-                'kl_div': self._kl
+                'kl_div': self._kl,
+                "ks_test": self._ks,
             }
         )
+        return self.fitted_param
 
     def plot_pdf(self, distributions=None, Py_ssize_t n=5, lw=2, gof_metric="ss_error"):
         cdef:
