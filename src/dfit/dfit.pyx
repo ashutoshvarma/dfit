@@ -200,7 +200,7 @@ cdef class DFit:
     def xmax(self, double value):
         cdef:
             double _raw_max = self._raw_data.max()
-        if value <= _raw_max:
+        if value >= _raw_max:
             value = _raw_max
         self._xmax = value
         self._update_trim_data()
