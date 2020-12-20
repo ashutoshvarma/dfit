@@ -143,12 +143,12 @@ cdef class DFit:
             self.distributions = set(POPULAR_DISTRIBUTIONS)
         elif isinstance(distributions, str):
             if distributions not in ALL_DISTRIBUTIONS:
-                raise Exception(f"Unknown distribution {distributions}")
+                raise ValueError(f"Unknown distribution {distributions}")
             self.distributions = set([distributions])
         else:
             distributions = set(distributions)
             if not distributions.issubset(ALL_DISTRIBUTIONS):
-                raise Exception(
+                raise ValueError(
                     f"Unknown distributions {distributions - set(ALL_DISTRIBUTIONS)}"
                 )
             self.distributions = distributions
