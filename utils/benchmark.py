@@ -7,15 +7,18 @@ from scipy import stats
 
 COUNT = 50
 
+
 def timing(f):
     @wraps(f)
     def wrap(*args, **kw):
         ts = time()
         result = f(*args, **kw)
         te = time()
-        print('%r args: %r took: %2.4f sec' % (f.__name__, args, (te-ts)/COUNT))
+        print("%r args: %r took: %2.4f sec" % (f.__name__, args, (te - ts) / COUNT))
         return result
+
     return wrap
+
 
 def repeat(count):
     def decorator(f):
@@ -25,8 +28,11 @@ def repeat(count):
             for _ in range(count):
                 rets.append(f(*args, **kwargs))
             return rets
+
         return wrapper
+
     return decorator
+
 
 @timing
 @repeat(count=COUNT)
@@ -34,6 +40,7 @@ def run_dfit(size):
     data = stats.gamma.rvs(2, loc=1.5, scale=2, size=int(size))
     f = dfit.DFit(data, distributions=["gamma", "cauchy", "beta"])
     f.fit()
+
 
 run_dfit(2e4)
 run_dfit(4e4)
