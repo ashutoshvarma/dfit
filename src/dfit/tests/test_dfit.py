@@ -51,6 +51,7 @@ class TestDFit:
         df.summary()
         assert "beta" in df.get_best()
 
+    @pytest.mark.slow
     def test_fit(self, data_beta_1k):
         df = DFit(data_beta_1k, distributions="popular")
         df.fit()
