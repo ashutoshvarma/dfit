@@ -38,8 +38,22 @@ jobs:
       displayName: "Python Setup"
       
     - bash: |
-        make test
-        make clean 
+        echo '##[group]Installing Dependencies'
+        pip install -e .[test] -v
+        echo '##[endgroup]''
+
+        echo '##[group]Build Inplace'
+        make
+        echo '##[endgroup]''
+
+        echo '##[group]Running Test'
+        pytest || exit 1
+        echo '##[endgroup]''
+
+        echo '##[group]Cleanup'
+        make clean
+        pip uninstall dfit
+        echo '##[endgroup]''
       displayName: "Initial Build Tests"
       
     - bash: |
