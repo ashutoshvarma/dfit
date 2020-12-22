@@ -15,17 +15,16 @@ jobs:
         imageName: 'ubuntu-latest'
         artifactName: linuxwheels
         # CFLAGS: "-std=c++14"
-      # MacWheels:
-      #   imageName: 'macOS-10.15'
-      #   artifactName: macwheels
-      #   # CFLAGS: "-std=c++14"
-      # WinWheels:
-      #   imageName: 'windows-latest'
-      #   artifactName: winwheels
+      MacWheels:
+        imageName: 'macOS-10.15'
+        artifactName: macwheels
+        # CFLAGS: "-std=c++14"
+      WinWheels:
+        imageName: 'windows-latest'
+        artifactName: winwheels
   pool: { vmImage: $(imageName) }
   variables:
     # CIBW_BEFORE_TEST: rm -rf {package}/build {package}/dist
-
     CIBW_TEST_COMMAND: pytest --pyargs dfit -vv 
     CIBW_TEST_EXTRAS: test
     CIBW_MANYLINUX_X86_64_IMAGE: manylinux2010
