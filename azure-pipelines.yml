@@ -25,7 +25,7 @@ jobs:
   pool: { vmImage: $(imageName) }
   variables:
     # CIBW_BEFORE_TEST: rm -rf {package}/build {package}/dist
-    CIBW_TEST_COMMAND: pytest {package}
+    CIBW_TEST_COMMAND: pytest --pyargs dfit -vv 
     CIBW_TEST_EXTRAS: test
     CIBW_MANYLINUX_X86_64_IMAGE: manylinux2010
     CIBW_MANYLINUX_I686_IMAGE: manylinux2010
