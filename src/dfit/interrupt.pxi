@@ -21,7 +21,7 @@ class TimeoutError(Exception):
     pass
 
 
-cdef int async_raise(long tid, object exception=Exception) except -1:
+cdef int async_raise(long long tid, object exception=Exception) except -1:
     """
     Raise an Exception in the Thread with id `tid`. Perform cleanup if
     needed.
@@ -45,7 +45,10 @@ def interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):
     only if everything is pickable.
     """
     cdef:
-        long tid
+        # should be long but due to some reasons (bug in cpython?)
+        # declaring tid as long causes OverflowError python int
+        # to long in 32bits python builds
+        long long tid
 
     # We run `func` in a thread and block on a queue until timeout
     if not q:
@@ -75,3 +78,10 @@ def interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):
             async_raise(tid, TimeoutError)
         except (SystemExit, ValueError):
             pass
+
+
+def fake_interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):
+    """
+    For debug purpose
+    """
+    return func(*args, **kwargs)
