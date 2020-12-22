@@ -55,8 +55,8 @@ class TestDFit:
     def test_fit(self, data_beta_1k):
         df = DFit(data_beta_1k, distributions="popular")
         df.fit()
-        assert df.df_errors.loc["beta"].loc["aic"] > 90
+        assert df.df_errors.loc["beta"].loc["aic"] > 70
 
         df = DFit(data_beta_1k, distributions="beta")
         df.fit()
-        assert df.df_errors.loc["beta"].loc["aic"] > 90
+        assert df.df_errors.loc["beta"].loc["aic"] > 70

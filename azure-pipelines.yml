@@ -52,7 +52,7 @@ jobs:
 
         echo '##[group]Cleanup'
         make clean
-        pip uninstall dfit
+        echo y | pip uninstall dfit
         echo '##[endgroup]'
       displayName: "Initial Build Tests"
       
