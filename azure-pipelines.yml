@@ -14,48 +14,36 @@ jobs:
       LinuxWheels:
         imageName: 'ubuntu-latest'
         artifactName: linuxwheels
-        CFLAGS: "-std=c++14"
-        # CIBW_BEFORE_TEST: pip install -r {project}/test_requirements.txt
+        # CFLAGS: "-std=c++14"
       MacWheels:
         imageName: 'macOS-10.15'
         artifactName: macwheels
-        CFLAGS: "-std=c++14"
-        # CIBW_BEFORE_TEST: pip install -r {project}/test_requirements.txt
+        # CFLAGS: "-std=c++14"
       WinWheels:
         imageName: 'windows-latest'
         artifactName: winwheels
-        # CIBW_BEFORE_BUILD_WINDOWS: pip install pandas scipy cython
-        # CIBW_BEFORE_TEST: pip install -r {project}\test_requirements.txt && pip uninstall -y pyxpdf_data
   pool: { vmImage: $(imageName) }
   variables:
-    # WITH_CYTHON: true
-    # CIBW_TEST_COMMAND: "python {project}/runtests.py -v"
+    # CIBW_BEFORE_TEST: rm -rf {package}/build {package}/dist
+    CIBW_TEST_COMMAND: pytest {package}
+    CIBW_TEST_EXTRAS: test
+    CIBW_MANYLINUX_X86_64_IMAGE: manylinux2010
+    CIBW_MANYLINUX_I686_IMAGE: manylinux2010
     CIBW_SKIP: "?p27* pp* cp34-* cp35-*"
     CIBW_BUILD_VERBOSITY: 1
-    CIBW_BEFORE_BUILD: pip install pandas scipy cython
   steps:
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '3.8'
       displayName: "Python Setup"
       
-    # - bash: |
-    #     brew postinstall openssl
-    #     export SSL_CERT_FILE=$(brew --prefix)/etc/openssl/cert.pem
-    #     echo "##vso[task.setvariable variable=SSL_CERT_FILE]$SSL_CERT_FILE"
-    #   displayName: "Update SSL Certs"
-    #   condition: contains(variables['imageName'], 'macOS')
-    # - bash: |
-    #     python -m pip install --upgrade pip setuptools wheel
-    #     pip install -r test_requirements.txt
-    #     python setup.py build_ext -i  -vv --warnings
-    #     python runtests.py -vv || exit 1
-    #     make clean 
-    #   displayName: "Initial Build Tests"
+    - bash: |
+        make test
+        make clean 
+      displayName: "Initial Build Tests"
       
     - bash: |
-        pip install pandas scipy cython
-        pip install cibuildwheel==1.4.1
+        pip install cibuildwheel==1.7.2
         cibuildwheel --output-dir wheelhouse .
       displayName: "Build Wheels"
         
