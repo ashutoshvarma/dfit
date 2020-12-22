@@ -1,12 +1,15 @@
 #!/usr/bin/env python
+import builtins
 import os
 import sys
 from pathlib import Path
-import builtins
 
 from setuptools import Extension, setup
 from setuptools.command.build_ext import build_ext as _build_ext
+
 from distutils.errors import DistutilsOptionError
+
+import versioneer
 
 try:
     from Cython.Build import cythonize
@@ -131,8 +134,8 @@ class build_ext(_build_ext):
 
         self.include_dirs.append(numpy.get_include())
 
-
-version = "0.0.1a3"
+cmdclass = versioneer.get_cmdclass()
+cmdclass.update(build_ext=build_ext)
 
 # Give setuptools a hint to complain if it's too old a version
 # 30.3.0 allows us to put most metadata in setup.cfg
@@ -148,10 +151,7 @@ if __name__ == "__main__":
         print("Using prebuilt cpp sources")
 
     setup(
-        version=version,
         ext_modules=get_ext_modules(),
-        # package_dir={"": "src/dfit"},
-        # packages=["dfit", "dfit.tests"],
         setup_requires=SETUP_REQUIRES,
-        cmdclass={"build_ext": build_ext},
+        cmdclass=cmdclass,
     )
