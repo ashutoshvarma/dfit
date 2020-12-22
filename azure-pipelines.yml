@@ -40,20 +40,20 @@ jobs:
     - bash: |
         echo '##[group]Installing Dependencies'
         pip install -e .[test] -v
-        echo '##[endgroup]''
+        echo '##[endgroup]'
 
         echo '##[group]Build Inplace'
         make
-        echo '##[endgroup]''
+        echo '##[endgroup]'
 
         echo '##[group]Running Test'
         pytest || exit 1
-        echo '##[endgroup]''
+        echo '##[endgroup]'
 
         echo '##[group]Cleanup'
         make clean
         pip uninstall dfit
-        echo '##[endgroup]''
+        echo '##[endgroup]'
       displayName: "Initial Build Tests"
       
     - bash: |
