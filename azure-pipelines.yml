@@ -47,7 +47,7 @@ jobs:
         echo '##[endgroup]'
 
         echo '##[group]Running Test'
-        pytest || exit 1
+        pytest --junitxml=junit.xml --cov-report xml --cov-report html --cov=dfit || exit 1
         echo '##[endgroup]'
 
         echo '##[group]Cleanup'
@@ -55,6 +55,18 @@ jobs:
         echo y | pip uninstall dfit
         echo '##[endgroup]'
       displayName: "Initial Build Tests"
+
+    - task: PublishTestResults@2
+      condition: succeededOrFailed()
+      inputs:
+        testResultsFiles: 'junit.xml'
+        testRunTitle: 'Publish test results'
+    
+    - task: PublishCodeCoverageResults@1
+      inputs:
+        codeCoverageTool: Cobertura
+        summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
+        reportDirectory: '$(System.DefaultWorkingDirectory)/**/htmlcov'
       
     - bash: |
         pip install cibuildwheel==1.7.2
