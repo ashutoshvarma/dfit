@@ -3046,7 +3046,7 @@ static PyObject *__pyx_pw_4dfit_4dfit_1interrupt_func(PyObject *__pyx_self, PyOb
   return __pyx_r;
 }
 
-/* "src/dfit/interrupt.pxi":54
+/* "src/dfit/interrupt.pxi":57
  *         q = Queue()
  * 
  *     def runner():             # <<<<<<<<<<<<<<
@@ -3101,16 +3101,16 @@ static PyObject *__pyx_pf_4dfit_4dfit_14interrupt_func_runner(PyObject *__pyx_se
   __Pyx_RefNannySetupContext("runner", 0);
   __pyx_outer_scope = (struct __pyx_obj_4dfit_4dfit___pyx_scope_struct__interrupt_func *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
-  __Pyx_TraceCall("runner", __pyx_f[0], 54, 0, __PYX_ERR(0, 54, __pyx_L1_error));
+  __Pyx_TraceCall("runner", __pyx_f[0], 57, 0, __PYX_ERR(0, 57, __pyx_L1_error));
 
-  /* "src/dfit/interrupt.pxi":55
+  /* "src/dfit/interrupt.pxi":58
  * 
  *     def runner():
  *         try:             # <<<<<<<<<<<<<<
  *             _res = func(*args, **kwargs)
  *             q.put((None, _res))
  */
-  __Pyx_TraceLine(55,0,__PYX_ERR(0, 55, __pyx_L1_error))
+  __Pyx_TraceLine(58,0,__PYX_ERR(0, 58, __pyx_L1_error))
   {
     __Pyx_PyThreadState_declare
     __Pyx_PyThreadState_assign
@@ -3120,42 +3120,42 @@ static PyObject *__pyx_pf_4dfit_4dfit_14interrupt_func_runner(PyObject *__pyx_se
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/dfit/interrupt.pxi":56
+      /* "src/dfit/interrupt.pxi":59
  *     def runner():
  *         try:
  *             _res = func(*args, **kwargs)             # <<<<<<<<<<<<<<
  *             q.put((None, _res))
  *         except TimeoutError:
  */
-      __Pyx_TraceLine(56,0,__PYX_ERR(0, 56, __pyx_L3_error))
-      if (unlikely(!__pyx_cur_scope->__pyx_v_func)) { __Pyx_RaiseClosureNameError("func"); __PYX_ERR(0, 56, __pyx_L3_error) }
-      if (unlikely(!__pyx_cur_scope->__pyx_v_args)) { __Pyx_RaiseClosureNameError("args"); __PYX_ERR(0, 56, __pyx_L3_error) }
+      __Pyx_TraceLine(59,0,__PYX_ERR(0, 59, __pyx_L3_error))
+      if (unlikely(!__pyx_cur_scope->__pyx_v_func)) { __Pyx_RaiseClosureNameError("func"); __PYX_ERR(0, 59, __pyx_L3_error) }
+      if (unlikely(!__pyx_cur_scope->__pyx_v_args)) { __Pyx_RaiseClosureNameError("args"); __PYX_ERR(0, 59, __pyx_L3_error) }
       if (unlikely(__pyx_cur_scope->__pyx_v_args == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-        __PYX_ERR(0, 56, __pyx_L3_error)
+        __PYX_ERR(0, 59, __pyx_L3_error)
       }
-      if (unlikely(!__pyx_cur_scope->__pyx_v_kwargs)) { __Pyx_RaiseClosureNameError("kwargs"); __PYX_ERR(0, 56, __pyx_L3_error) }
+      if (unlikely(!__pyx_cur_scope->__pyx_v_kwargs)) { __Pyx_RaiseClosureNameError("kwargs"); __PYX_ERR(0, 59, __pyx_L3_error) }
       if (unlikely(__pyx_cur_scope->__pyx_v_kwargs == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "argument after ** must be a mapping, not NoneType");
-        __PYX_ERR(0, 56, __pyx_L3_error)
+        __PYX_ERR(0, 59, __pyx_L3_error)
       }
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_cur_scope->__pyx_v_func, __pyx_cur_scope->__pyx_v_args, __pyx_cur_scope->__pyx_v_kwargs); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 56, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_cur_scope->__pyx_v_func, __pyx_cur_scope->__pyx_v_args, __pyx_cur_scope->__pyx_v_kwargs); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 59, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_v__res = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/dfit/interrupt.pxi":57
+      /* "src/dfit/interrupt.pxi":60
  *         try:
  *             _res = func(*args, **kwargs)
  *             q.put((None, _res))             # <<<<<<<<<<<<<<
  *         except TimeoutError:
  *             # rasied by async_rasie to kill the orphan threads
  */
-      __Pyx_TraceLine(57,0,__PYX_ERR(0, 57, __pyx_L3_error))
-      if (unlikely(!__pyx_cur_scope->__pyx_v_q)) { __Pyx_RaiseClosureNameError("q"); __PYX_ERR(0, 57, __pyx_L3_error) }
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_q, __pyx_n_s_put); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 57, __pyx_L3_error)
+      __Pyx_TraceLine(60,0,__PYX_ERR(0, 60, __pyx_L3_error))
+      if (unlikely(!__pyx_cur_scope->__pyx_v_q)) { __Pyx_RaiseClosureNameError("q"); __PYX_ERR(0, 60, __pyx_L3_error) }
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_q, __pyx_n_s_put); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 60, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 57, __pyx_L3_error)
+      __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 60, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_INCREF(Py_None);
       __Pyx_GIVEREF(Py_None);
@@ -3176,12 +3176,12 @@ static PyObject *__pyx_pf_4dfit_4dfit_14interrupt_func_runner(PyObject *__pyx_se
       __pyx_t_4 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_7, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 57, __pyx_L3_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 60, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/dfit/interrupt.pxi":55
+      /* "src/dfit/interrupt.pxi":58
  * 
  *     def runner():
  *         try:             # <<<<<<<<<<<<<<
@@ -3199,16 +3199,16 @@ static PyObject *__pyx_pf_4dfit_4dfit_14interrupt_func_runner(PyObject *__pyx_se
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "src/dfit/interrupt.pxi":58
+    /* "src/dfit/interrupt.pxi":61
  *             _res = func(*args, **kwargs)
  *             q.put((None, _res))
  *         except TimeoutError:             # <<<<<<<<<<<<<<
  *             # rasied by async_rasie to kill the orphan threads
  *             pass
  */
-    __Pyx_TraceLine(58,0,__PYX_ERR(0, 58, __pyx_L5_except_error))
+    __Pyx_TraceLine(61,0,__PYX_ERR(0, 61, __pyx_L5_except_error))
     __Pyx_ErrFetch(&__pyx_t_4, &__pyx_t_5, &__pyx_t_6);
-    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_TimeoutError); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 58, __pyx_L5_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_TimeoutError); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 61, __pyx_L5_except_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_8 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_4, __pyx_t_7);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -3219,18 +3219,18 @@ static PyObject *__pyx_pf_4dfit_4dfit_14interrupt_func_runner(PyObject *__pyx_se
       goto __pyx_L4_exception_handled;
     }
 
-    /* "src/dfit/interrupt.pxi":61
+    /* "src/dfit/interrupt.pxi":64
  *             # rasied by async_rasie to kill the orphan threads
  *             pass
  *         except Exception as ex:             # <<<<<<<<<<<<<<
  *             q.put((ex, None))
  * 
  */
-    __Pyx_TraceLine(61,0,__PYX_ERR(0, 61, __pyx_L5_except_error))
+    __Pyx_TraceLine(64,0,__PYX_ERR(0, 64, __pyx_L5_except_error))
     __pyx_t_8 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
     if (__pyx_t_8) {
       __Pyx_AddTraceback("dfit.dfit.interrupt_func.runner", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_5, &__pyx_t_4) < 0) __PYX_ERR(0, 61, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_5, &__pyx_t_4) < 0) __PYX_ERR(0, 64, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GOTREF(__pyx_t_4);
@@ -3238,18 +3238,18 @@ static PyObject *__pyx_pf_4dfit_4dfit_14interrupt_func_runner(PyObject *__pyx_se
       __pyx_v_ex = __pyx_t_5;
       /*try:*/ {
 
-        /* "src/dfit/interrupt.pxi":62
+        /* "src/dfit/interrupt.pxi":65
  *             pass
  *         except Exception as ex:
  *             q.put((ex, None))             # <<<<<<<<<<<<<<
  * 
  *     tid = start_new_thread(runner, ())
  */
-        __Pyx_TraceLine(62,0,__PYX_ERR(0, 62, __pyx_L14_error))
-        if (unlikely(!__pyx_cur_scope->__pyx_v_q)) { __Pyx_RaiseClosureNameError("q"); __PYX_ERR(0, 62, __pyx_L14_error) }
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_q, __pyx_n_s_put); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 62, __pyx_L14_error)
+        __Pyx_TraceLine(65,0,__PYX_ERR(0, 65, __pyx_L14_error))
+        if (unlikely(!__pyx_cur_scope->__pyx_v_q)) { __Pyx_RaiseClosureNameError("q"); __PYX_ERR(0, 65, __pyx_L14_error) }
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_q, __pyx_n_s_put); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 65, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 62, __pyx_L14_error)
+        __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 65, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_INCREF(__pyx_v_ex);
         __Pyx_GIVEREF(__pyx_v_ex);
@@ -3270,20 +3270,20 @@ static PyObject *__pyx_pf_4dfit_4dfit_14interrupt_func_runner(PyObject *__pyx_se
         __pyx_t_7 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_11, __pyx_t_10) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_10);
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 62, __pyx_L14_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 65, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
 
-      /* "src/dfit/interrupt.pxi":61
+      /* "src/dfit/interrupt.pxi":64
  *             # rasied by async_rasie to kill the orphan threads
  *             pass
  *         except Exception as ex:             # <<<<<<<<<<<<<<
  *             q.put((ex, None))
  * 
  */
-      __Pyx_TraceLine(61,0,__PYX_ERR(0, 61, __pyx_L14_error))
+      __Pyx_TraceLine(64,0,__PYX_ERR(0, 64, __pyx_L14_error))
       /*finally:*/ {
         /*normal exit:*/{
           __Pyx_DECREF(__pyx_v_ex);
@@ -3336,7 +3336,7 @@ static PyObject *__pyx_pf_4dfit_4dfit_14interrupt_func_runner(PyObject *__pyx_se
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "src/dfit/interrupt.pxi":55
+    /* "src/dfit/interrupt.pxi":58
  * 
  *     def runner():
  *         try:             # <<<<<<<<<<<<<<
@@ -3356,7 +3356,7 @@ static PyObject *__pyx_pf_4dfit_4dfit_14interrupt_func_runner(PyObject *__pyx_se
     __pyx_L8_try_end:;
   }
 
-  /* "src/dfit/interrupt.pxi":54
+  /* "src/dfit/interrupt.pxi":57
  *         q = Queue()
  * 
  *     def runner():             # <<<<<<<<<<<<<<
@@ -3396,8 +3396,8 @@ static PyObject *__pyx_pf_4dfit_4dfit_14interrupt_func_runner(PyObject *__pyx_se
 
 static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_func, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, PyObject *__pyx_v_timeout, PyObject *__pyx_v_q) {
   struct __pyx_obj_4dfit_4dfit___pyx_scope_struct__interrupt_func *__pyx_cur_scope;
+  PY_LONG_LONG __pyx_v_tid;
   PyObject *__pyx_v_runner = 0;
-  PyObject *__pyx_v_tid = NULL;
   PyObject *__pyx_v_resp = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_TraceDeclarations
@@ -3409,23 +3409,23 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
   PyObject *__pyx_t_5 = NULL;
   int __pyx_t_6;
   PyObject *__pyx_t_7 = NULL;
-  PyObject *__pyx_t_8 = NULL;
+  PY_LONG_LONG __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
   PyObject *__pyx_t_10 = NULL;
   PyObject *__pyx_t_11 = NULL;
   PyObject *__pyx_t_12 = NULL;
-  Py_ssize_t __pyx_t_13;
-  Py_UCS4 __pyx_t_14;
-  PyObject *__pyx_t_15 = NULL;
-  int __pyx_t_16;
-  char const *__pyx_t_17;
-  PyObject *__pyx_t_18 = NULL;
+  PyObject *__pyx_t_13 = NULL;
+  Py_ssize_t __pyx_t_14;
+  Py_UCS4 __pyx_t_15;
+  PyObject *__pyx_t_16 = NULL;
+  int __pyx_t_17;
+  char const *__pyx_t_18;
   PyObject *__pyx_t_19 = NULL;
   PyObject *__pyx_t_20 = NULL;
   PyObject *__pyx_t_21 = NULL;
   PyObject *__pyx_t_22 = NULL;
   PyObject *__pyx_t_23 = NULL;
-  PY_LONG_LONG __pyx_t_24;
+  PyObject *__pyx_t_24 = NULL;
   int __pyx_t_25;
   struct __pyx_opt_args_4dfit_4dfit_async_raise __pyx_t_26;
   int __pyx_lineno = 0;
@@ -3455,26 +3455,26 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_q);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_q);
 
-  /* "src/dfit/interrupt.pxi":51
+  /* "src/dfit/interrupt.pxi":54
  * 
  *     # We run `func` in a thread and block on a queue until timeout
  *     if not q:             # <<<<<<<<<<<<<<
  *         q = Queue()
  * 
  */
-  __Pyx_TraceLine(51,0,__PYX_ERR(0, 51, __pyx_L1_error))
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_q); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __Pyx_TraceLine(54,0,__PYX_ERR(0, 54, __pyx_L1_error))
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_q); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 54, __pyx_L1_error)
   __pyx_t_2 = ((!__pyx_t_1) != 0);
   if (__pyx_t_2) {
 
-    /* "src/dfit/interrupt.pxi":52
+    /* "src/dfit/interrupt.pxi":55
  *     # We run `func` in a thread and block on a queue until timeout
  *     if not q:
  *         q = Queue()             # <<<<<<<<<<<<<<
  * 
  *     def runner():
  */
-    __Pyx_TraceLine(52,0,__PYX_ERR(0, 52, __pyx_L1_error))
+    __Pyx_TraceLine(55,0,__PYX_ERR(0, 55, __pyx_L1_error))
     __Pyx_INCREF(__pyx_v_4dfit_4dfit_Queue);
     __pyx_t_4 = __pyx_v_4dfit_4dfit_Queue; __pyx_t_5 = NULL;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -3488,7 +3488,7 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
     }
     __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_cur_scope->__pyx_v_q);
@@ -3496,7 +3496,7 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
     __Pyx_GIVEREF(__pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "src/dfit/interrupt.pxi":51
+    /* "src/dfit/interrupt.pxi":54
  * 
  *     # We run `func` in a thread and block on a queue until timeout
  *     if not q:             # <<<<<<<<<<<<<<
@@ -3505,27 +3505,27 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
  */
   }
 
-  /* "src/dfit/interrupt.pxi":54
+  /* "src/dfit/interrupt.pxi":57
  *         q = Queue()
  * 
  *     def runner():             # <<<<<<<<<<<<<<
  *         try:
  *             _res = func(*args, **kwargs)
  */
-  __Pyx_TraceLine(54,0,__PYX_ERR(0, 54, __pyx_L1_error))
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_4dfit_4dfit_14interrupt_func_1runner, 0, __pyx_n_s_interrupt_func_locals_runner, ((PyObject*)__pyx_cur_scope), __pyx_n_s_dfit_dfit, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __Pyx_TraceLine(57,0,__PYX_ERR(0, 57, __pyx_L1_error))
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_4dfit_4dfit_14interrupt_func_1runner, 0, __pyx_n_s_interrupt_func_locals_runner, ((PyObject*)__pyx_cur_scope), __pyx_n_s_dfit_dfit, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_runner = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "src/dfit/interrupt.pxi":64
+  /* "src/dfit/interrupt.pxi":67
  *             q.put((ex, None))
  * 
  *     tid = start_new_thread(runner, ())             # <<<<<<<<<<<<<<
  * 
  *     try:
  */
-  __Pyx_TraceLine(64,0,__PYX_ERR(0, 64, __pyx_L1_error))
+  __Pyx_TraceLine(67,0,__PYX_ERR(0, 67, __pyx_L1_error))
   __Pyx_INCREF(__pyx_v_4dfit_4dfit_start_new_thread);
   __pyx_t_4 = __pyx_v_4dfit_4dfit_start_new_thread; __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -3542,7 +3542,7 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_4)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_runner, __pyx_empty_tuple};
-    __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_3);
   } else
@@ -3550,13 +3550,13 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_runner, __pyx_empty_tuple};
-    __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_3);
   } else
   #endif
   {
-    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 64, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -3567,81 +3567,82 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
     __Pyx_INCREF(__pyx_empty_tuple);
     __Pyx_GIVEREF(__pyx_empty_tuple);
     PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_empty_tuple);
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_v_tid = __pyx_t_3;
-  __pyx_t_3 = 0;
+  __pyx_t_8 = __Pyx_PyInt_As_PY_LONG_LONG(__pyx_t_3); if (unlikely((__pyx_t_8 == (PY_LONG_LONG)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_v_tid = __pyx_t_8;
 
-  /* "src/dfit/interrupt.pxi":66
+  /* "src/dfit/interrupt.pxi":69
  *     tid = start_new_thread(runner, ())
  * 
  *     try:             # <<<<<<<<<<<<<<
  *         resp = q.get(timeout=timeout)
  *         if resp[0]:
  */
-  __Pyx_TraceLine(66,0,__PYX_ERR(0, 66, __pyx_L1_error))
+  __Pyx_TraceLine(69,0,__PYX_ERR(0, 69, __pyx_L1_error))
   /*try:*/ {
     {
       __Pyx_PyThreadState_declare
       __Pyx_PyThreadState_assign
-      __Pyx_ExceptionSave(&__pyx_t_8, &__pyx_t_9, &__pyx_t_10);
-      __Pyx_XGOTREF(__pyx_t_8);
+      __Pyx_ExceptionSave(&__pyx_t_9, &__pyx_t_10, &__pyx_t_11);
       __Pyx_XGOTREF(__pyx_t_9);
       __Pyx_XGOTREF(__pyx_t_10);
+      __Pyx_XGOTREF(__pyx_t_11);
       /*try:*/ {
 
-        /* "src/dfit/interrupt.pxi":67
+        /* "src/dfit/interrupt.pxi":70
  * 
  *     try:
  *         resp = q.get(timeout=timeout)             # <<<<<<<<<<<<<<
  *         if resp[0]:
  *             raise resp[0]
  */
-        __Pyx_TraceLine(67,0,__PYX_ERR(0, 67, __pyx_L7_error))
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_q, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L7_error)
+        __Pyx_TraceLine(70,0,__PYX_ERR(0, 70, __pyx_L7_error))
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_q, __pyx_n_s_get); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L7_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 67, __pyx_L7_error)
+        __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 70, __pyx_L7_error)
         __Pyx_GOTREF(__pyx_t_4);
-        if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_timeout, __pyx_v_timeout) < 0) __PYX_ERR(0, 67, __pyx_L7_error)
-        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 67, __pyx_L7_error)
+        if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_timeout, __pyx_v_timeout) < 0) __PYX_ERR(0, 70, __pyx_L7_error)
+        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 70, __pyx_L7_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __pyx_v_resp = __pyx_t_7;
         __pyx_t_7 = 0;
 
-        /* "src/dfit/interrupt.pxi":68
+        /* "src/dfit/interrupt.pxi":71
  *     try:
  *         resp = q.get(timeout=timeout)
  *         if resp[0]:             # <<<<<<<<<<<<<<
  *             raise resp[0]
  *         return resp[1]
  */
-        __Pyx_TraceLine(68,0,__PYX_ERR(0, 68, __pyx_L7_error))
-        __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_resp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 68, __pyx_L7_error)
+        __Pyx_TraceLine(71,0,__PYX_ERR(0, 71, __pyx_L7_error))
+        __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_resp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 71, __pyx_L7_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 68, __pyx_L7_error)
+        __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 71, __pyx_L7_error)
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         if (unlikely(__pyx_t_2)) {
 
-          /* "src/dfit/interrupt.pxi":69
+          /* "src/dfit/interrupt.pxi":72
  *         resp = q.get(timeout=timeout)
  *         if resp[0]:
  *             raise resp[0]             # <<<<<<<<<<<<<<
  *         return resp[1]
  *     except (Queue_Empty, MpTimeoutError):
  */
-          __Pyx_TraceLine(69,0,__PYX_ERR(0, 69, __pyx_L7_error))
-          __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_resp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 69, __pyx_L7_error)
+          __Pyx_TraceLine(72,0,__PYX_ERR(0, 72, __pyx_L7_error))
+          __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_resp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 72, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_7);
           __Pyx_Raise(__pyx_t_7, 0, 0, 0);
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __PYX_ERR(0, 69, __pyx_L7_error)
+          __PYX_ERR(0, 72, __pyx_L7_error)
 
-          /* "src/dfit/interrupt.pxi":68
+          /* "src/dfit/interrupt.pxi":71
  *     try:
  *         resp = q.get(timeout=timeout)
  *         if resp[0]:             # <<<<<<<<<<<<<<
@@ -3650,22 +3651,22 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
  */
         }
 
-        /* "src/dfit/interrupt.pxi":70
+        /* "src/dfit/interrupt.pxi":73
  *         if resp[0]:
  *             raise resp[0]
  *         return resp[1]             # <<<<<<<<<<<<<<
  *     except (Queue_Empty, MpTimeoutError):
  *         raise TimeoutError(f"Timeout (taking more than {timeout} sec)")
  */
-        __Pyx_TraceLine(70,0,__PYX_ERR(0, 70, __pyx_L7_error))
+        __Pyx_TraceLine(73,0,__PYX_ERR(0, 73, __pyx_L7_error))
         __Pyx_XDECREF(__pyx_r);
-        __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_resp, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 70, __pyx_L7_error)
+        __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_resp, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 73, __pyx_L7_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_r = __pyx_t_7;
         __pyx_t_7 = 0;
         goto __pyx_L11_try_return;
 
-        /* "src/dfit/interrupt.pxi":66
+        /* "src/dfit/interrupt.pxi":69
  *     tid = start_new_thread(runner, ())
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -3679,155 +3680,154 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "src/dfit/interrupt.pxi":71
+      /* "src/dfit/interrupt.pxi":74
  *             raise resp[0]
  *         return resp[1]
  *     except (Queue_Empty, MpTimeoutError):             # <<<<<<<<<<<<<<
  *         raise TimeoutError(f"Timeout (taking more than {timeout} sec)")
  *     finally:
  */
-      __Pyx_TraceLine(71,0,__PYX_ERR(0, 71, __pyx_L9_except_error))
+      __Pyx_TraceLine(74,0,__PYX_ERR(0, 74, __pyx_L9_except_error))
       __pyx_t_6 = __Pyx_PyErr_ExceptionMatches(__pyx_v_4dfit_4dfit_Queue_Empty) || __Pyx_PyErr_ExceptionMatches(__pyx_v_4dfit_4dfit_MpTimeoutError);
       if (__pyx_t_6) {
         __Pyx_AddTraceback("dfit.dfit.interrupt_func", __pyx_clineno, __pyx_lineno, __pyx_filename);
-        if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_4, &__pyx_t_3) < 0) __PYX_ERR(0, 71, __pyx_L9_except_error)
+        if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_4, &__pyx_t_3) < 0) __PYX_ERR(0, 74, __pyx_L9_except_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_GOTREF(__pyx_t_3);
 
-        /* "src/dfit/interrupt.pxi":72
+        /* "src/dfit/interrupt.pxi":75
  *         return resp[1]
  *     except (Queue_Empty, MpTimeoutError):
  *         raise TimeoutError(f"Timeout (taking more than {timeout} sec)")             # <<<<<<<<<<<<<<
  *     finally:
  *         try:
  */
-        __Pyx_TraceLine(72,0,__PYX_ERR(0, 72, __pyx_L9_except_error))
-        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_TimeoutError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 72, __pyx_L9_except_error)
-        __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_12 = PyTuple_New(3); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 72, __pyx_L9_except_error)
+        __Pyx_TraceLine(75,0,__PYX_ERR(0, 75, __pyx_L9_except_error))
+        __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_TimeoutError); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 75, __pyx_L9_except_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_13 = 0;
-        __pyx_t_14 = 127;
+        __pyx_t_13 = PyTuple_New(3); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 75, __pyx_L9_except_error)
+        __Pyx_GOTREF(__pyx_t_13);
+        __pyx_t_14 = 0;
+        __pyx_t_15 = 127;
         __Pyx_INCREF(__pyx_kp_u_Timeout_taking_more_than);
-        __pyx_t_13 += 26;
+        __pyx_t_14 += 26;
         __Pyx_GIVEREF(__pyx_kp_u_Timeout_taking_more_than);
-        PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_kp_u_Timeout_taking_more_than);
-        __pyx_t_15 = __Pyx_PyObject_FormatSimple(__pyx_v_timeout, __pyx_empty_unicode); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 72, __pyx_L9_except_error)
-        __Pyx_GOTREF(__pyx_t_15);
-        __pyx_t_14 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_15) > __pyx_t_14) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_15) : __pyx_t_14;
-        __pyx_t_13 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_15);
-        __Pyx_GIVEREF(__pyx_t_15);
-        PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_t_15);
-        __pyx_t_15 = 0;
+        PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_kp_u_Timeout_taking_more_than);
+        __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_v_timeout, __pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 75, __pyx_L9_except_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __pyx_t_15 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_16) > __pyx_t_15) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_16) : __pyx_t_15;
+        __pyx_t_14 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_16);
+        __Pyx_GIVEREF(__pyx_t_16);
+        PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_t_16);
+        __pyx_t_16 = 0;
         __Pyx_INCREF(__pyx_kp_u_sec);
-        __pyx_t_13 += 5;
+        __pyx_t_14 += 5;
         __Pyx_GIVEREF(__pyx_kp_u_sec);
-        PyTuple_SET_ITEM(__pyx_t_12, 2, __pyx_kp_u_sec);
-        __pyx_t_15 = __Pyx_PyUnicode_Join(__pyx_t_12, 3, __pyx_t_13, __pyx_t_14); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 72, __pyx_L9_except_error)
-        __Pyx_GOTREF(__pyx_t_15);
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __pyx_t_12 = NULL;
-        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_11))) {
-          __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_11);
-          if (likely(__pyx_t_12)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_11);
-            __Pyx_INCREF(__pyx_t_12);
+        PyTuple_SET_ITEM(__pyx_t_13, 2, __pyx_kp_u_sec);
+        __pyx_t_16 = __Pyx_PyUnicode_Join(__pyx_t_13, 3, __pyx_t_14, __pyx_t_15); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 75, __pyx_L9_except_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+        __pyx_t_13 = NULL;
+        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_12))) {
+          __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_12);
+          if (likely(__pyx_t_13)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
+            __Pyx_INCREF(__pyx_t_13);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_11, function);
+            __Pyx_DECREF_SET(__pyx_t_12, function);
           }
         }
-        __pyx_t_5 = (__pyx_t_12) ? __Pyx_PyObject_Call2Args(__pyx_t_11, __pyx_t_12, __pyx_t_15) : __Pyx_PyObject_CallOneArg(__pyx_t_11, __pyx_t_15);
-        __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 72, __pyx_L9_except_error)
+        __pyx_t_5 = (__pyx_t_13) ? __Pyx_PyObject_Call2Args(__pyx_t_12, __pyx_t_13, __pyx_t_16) : __Pyx_PyObject_CallOneArg(__pyx_t_12, __pyx_t_16);
+        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 75, __pyx_L9_except_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_Raise(__pyx_t_5, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __PYX_ERR(0, 72, __pyx_L9_except_error)
+        __PYX_ERR(0, 75, __pyx_L9_except_error)
       }
       goto __pyx_L9_except_error;
       __pyx_L9_except_error:;
 
-      /* "src/dfit/interrupt.pxi":66
+      /* "src/dfit/interrupt.pxi":69
  *     tid = start_new_thread(runner, ())
  * 
  *     try:             # <<<<<<<<<<<<<<
  *         resp = q.get(timeout=timeout)
  *         if resp[0]:
  */
-      __Pyx_XGIVEREF(__pyx_t_8);
       __Pyx_XGIVEREF(__pyx_t_9);
       __Pyx_XGIVEREF(__pyx_t_10);
-      __Pyx_ExceptionReset(__pyx_t_8, __pyx_t_9, __pyx_t_10);
+      __Pyx_XGIVEREF(__pyx_t_11);
+      __Pyx_ExceptionReset(__pyx_t_9, __pyx_t_10, __pyx_t_11);
       goto __pyx_L5_error;
       __pyx_L11_try_return:;
-      __Pyx_XGIVEREF(__pyx_t_8);
       __Pyx_XGIVEREF(__pyx_t_9);
       __Pyx_XGIVEREF(__pyx_t_10);
-      __Pyx_ExceptionReset(__pyx_t_8, __pyx_t_9, __pyx_t_10);
+      __Pyx_XGIVEREF(__pyx_t_11);
+      __Pyx_ExceptionReset(__pyx_t_9, __pyx_t_10, __pyx_t_11);
       goto __pyx_L4_return;
     }
   }
 
-  /* "src/dfit/interrupt.pxi":74
+  /* "src/dfit/interrupt.pxi":77
  *         raise TimeoutError(f"Timeout (taking more than {timeout} sec)")
  *     finally:
  *         try:             # <<<<<<<<<<<<<<
  *             async_raise(tid, TimeoutError)
  *         except (SystemExit, ValueError):
  */
-  __Pyx_TraceLine(74,0,__PYX_ERR(0, 74, __pyx_L5_error))
+  __Pyx_TraceLine(77,0,__PYX_ERR(0, 77, __pyx_L5_error))
   /*finally:*/ {
     __pyx_L5_error:;
     /*exception exit:*/{
       __Pyx_PyThreadState_declare
       __Pyx_PyThreadState_assign
-      __pyx_t_10 = 0; __pyx_t_9 = 0; __pyx_t_8 = 0; __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0;
-      __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+      __pyx_t_11 = 0; __pyx_t_10 = 0; __pyx_t_9 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0; __pyx_t_21 = 0;
       __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
+      __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+      __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (PY_MAJOR_VERSION >= 3) __Pyx_ExceptionSwap(&__pyx_t_18, &__pyx_t_19, &__pyx_t_20);
-      if ((PY_MAJOR_VERSION < 3) || unlikely(__Pyx_GetException(&__pyx_t_10, &__pyx_t_9, &__pyx_t_8) < 0)) __Pyx_ErrFetch(&__pyx_t_10, &__pyx_t_9, &__pyx_t_8);
+      if (PY_MAJOR_VERSION >= 3) __Pyx_ExceptionSwap(&__pyx_t_19, &__pyx_t_20, &__pyx_t_21);
+      if ((PY_MAJOR_VERSION < 3) || unlikely(__Pyx_GetException(&__pyx_t_11, &__pyx_t_10, &__pyx_t_9) < 0)) __Pyx_ErrFetch(&__pyx_t_11, &__pyx_t_10, &__pyx_t_9);
+      __Pyx_XGOTREF(__pyx_t_11);
       __Pyx_XGOTREF(__pyx_t_10);
       __Pyx_XGOTREF(__pyx_t_9);
-      __Pyx_XGOTREF(__pyx_t_8);
-      __Pyx_XGOTREF(__pyx_t_18);
       __Pyx_XGOTREF(__pyx_t_19);
       __Pyx_XGOTREF(__pyx_t_20);
-      __pyx_t_6 = __pyx_lineno; __pyx_t_16 = __pyx_clineno; __pyx_t_17 = __pyx_filename;
+      __Pyx_XGOTREF(__pyx_t_21);
+      __pyx_t_6 = __pyx_lineno; __pyx_t_17 = __pyx_clineno; __pyx_t_18 = __pyx_filename;
       {
         {
           __Pyx_PyThreadState_declare
           __Pyx_PyThreadState_assign
-          __Pyx_ExceptionSave(&__pyx_t_21, &__pyx_t_22, &__pyx_t_23);
-          __Pyx_XGOTREF(__pyx_t_21);
+          __Pyx_ExceptionSave(&__pyx_t_22, &__pyx_t_23, &__pyx_t_24);
           __Pyx_XGOTREF(__pyx_t_22);
           __Pyx_XGOTREF(__pyx_t_23);
+          __Pyx_XGOTREF(__pyx_t_24);
           /*try:*/ {
 
-            /* "src/dfit/interrupt.pxi":75
+            /* "src/dfit/interrupt.pxi":78
  *     finally:
  *         try:
  *             async_raise(tid, TimeoutError)             # <<<<<<<<<<<<<<
  *         except (SystemExit, ValueError):
  *             pass
  */
-            __Pyx_TraceLine(75,0,__PYX_ERR(0, 75, __pyx_L18_error))
-            __pyx_t_24 = __Pyx_PyInt_As_PY_LONG_LONG(__pyx_v_tid); if (unlikely((__pyx_t_24 == (PY_LONG_LONG)-1) && PyErr_Occurred())) __PYX_ERR(0, 75, __pyx_L18_error)
-            __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_TimeoutError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L18_error)
+            __Pyx_TraceLine(78,0,__PYX_ERR(0, 78, __pyx_L18_error))
+            __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_TimeoutError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 78, __pyx_L18_error)
             __Pyx_GOTREF(__pyx_t_3);
             __pyx_t_26.__pyx_n = 1;
             __pyx_t_26.exception = __pyx_t_3;
-            __pyx_t_25 = __pyx_f_4dfit_4dfit_async_raise(__pyx_t_24, &__pyx_t_26); if (unlikely(__pyx_t_25 == ((int)-1))) __PYX_ERR(0, 75, __pyx_L18_error)
+            __pyx_t_25 = __pyx_f_4dfit_4dfit_async_raise(__pyx_v_tid, &__pyx_t_26); if (unlikely(__pyx_t_25 == ((int)-1))) __PYX_ERR(0, 78, __pyx_L18_error)
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-            /* "src/dfit/interrupt.pxi":74
+            /* "src/dfit/interrupt.pxi":77
  *         raise TimeoutError(f"Timeout (taking more than {timeout} sec)")
  *     finally:
  *         try:             # <<<<<<<<<<<<<<
@@ -3835,27 +3835,27 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
  *         except (SystemExit, ValueError):
  */
           }
-          __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
           __Pyx_XDECREF(__pyx_t_22); __pyx_t_22 = 0;
           __Pyx_XDECREF(__pyx_t_23); __pyx_t_23 = 0;
+          __Pyx_XDECREF(__pyx_t_24); __pyx_t_24 = 0;
           goto __pyx_L23_try_end;
           __pyx_L18_error:;
-          __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
           __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-          __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
+          __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+          __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-          /* "src/dfit/interrupt.pxi":76
+          /* "src/dfit/interrupt.pxi":79
  *         try:
  *             async_raise(tid, TimeoutError)
  *         except (SystemExit, ValueError):             # <<<<<<<<<<<<<<
  *             pass
  * 
  */
-          __Pyx_TraceLine(76,0,__PYX_ERR(0, 76, __pyx_L20_except_error))
+          __Pyx_TraceLine(79,0,__PYX_ERR(0, 79, __pyx_L20_except_error))
           __pyx_t_25 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_SystemExit) || __Pyx_PyErr_ExceptionMatches(__pyx_builtin_ValueError);
           if (__pyx_t_25) {
             __Pyx_ErrRestore(0,0,0);
@@ -3864,81 +3864,80 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
           goto __pyx_L20_except_error;
           __pyx_L20_except_error:;
 
-          /* "src/dfit/interrupt.pxi":74
+          /* "src/dfit/interrupt.pxi":77
  *         raise TimeoutError(f"Timeout (taking more than {timeout} sec)")
  *     finally:
  *         try:             # <<<<<<<<<<<<<<
  *             async_raise(tid, TimeoutError)
  *         except (SystemExit, ValueError):
  */
-          __Pyx_XGIVEREF(__pyx_t_21);
           __Pyx_XGIVEREF(__pyx_t_22);
           __Pyx_XGIVEREF(__pyx_t_23);
-          __Pyx_ExceptionReset(__pyx_t_21, __pyx_t_22, __pyx_t_23);
+          __Pyx_XGIVEREF(__pyx_t_24);
+          __Pyx_ExceptionReset(__pyx_t_22, __pyx_t_23, __pyx_t_24);
           goto __pyx_L17_error;
           __pyx_L19_exception_handled:;
-          __Pyx_XGIVEREF(__pyx_t_21);
           __Pyx_XGIVEREF(__pyx_t_22);
           __Pyx_XGIVEREF(__pyx_t_23);
-          __Pyx_ExceptionReset(__pyx_t_21, __pyx_t_22, __pyx_t_23);
+          __Pyx_XGIVEREF(__pyx_t_24);
+          __Pyx_ExceptionReset(__pyx_t_22, __pyx_t_23, __pyx_t_24);
           __pyx_L23_try_end:;
         }
       }
       if (PY_MAJOR_VERSION >= 3) {
-        __Pyx_XGIVEREF(__pyx_t_18);
         __Pyx_XGIVEREF(__pyx_t_19);
         __Pyx_XGIVEREF(__pyx_t_20);
-        __Pyx_ExceptionReset(__pyx_t_18, __pyx_t_19, __pyx_t_20);
+        __Pyx_XGIVEREF(__pyx_t_21);
+        __Pyx_ExceptionReset(__pyx_t_19, __pyx_t_20, __pyx_t_21);
       }
+      __Pyx_XGIVEREF(__pyx_t_11);
       __Pyx_XGIVEREF(__pyx_t_10);
       __Pyx_XGIVEREF(__pyx_t_9);
-      __Pyx_XGIVEREF(__pyx_t_8);
-      __Pyx_ErrRestore(__pyx_t_10, __pyx_t_9, __pyx_t_8);
-      __pyx_t_10 = 0; __pyx_t_9 = 0; __pyx_t_8 = 0; __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0;
-      __pyx_lineno = __pyx_t_6; __pyx_clineno = __pyx_t_16; __pyx_filename = __pyx_t_17;
+      __Pyx_ErrRestore(__pyx_t_11, __pyx_t_10, __pyx_t_9);
+      __pyx_t_11 = 0; __pyx_t_10 = 0; __pyx_t_9 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0; __pyx_t_21 = 0;
+      __pyx_lineno = __pyx_t_6; __pyx_clineno = __pyx_t_17; __pyx_filename = __pyx_t_18;
       goto __pyx_L1_error;
       __pyx_L17_error:;
       if (PY_MAJOR_VERSION >= 3) {
-        __Pyx_XGIVEREF(__pyx_t_18);
         __Pyx_XGIVEREF(__pyx_t_19);
         __Pyx_XGIVEREF(__pyx_t_20);
-        __Pyx_ExceptionReset(__pyx_t_18, __pyx_t_19, __pyx_t_20);
+        __Pyx_XGIVEREF(__pyx_t_21);
+        __Pyx_ExceptionReset(__pyx_t_19, __pyx_t_20, __pyx_t_21);
       }
+      __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0;
+      __pyx_t_19 = 0; __pyx_t_20 = 0; __pyx_t_21 = 0;
       goto __pyx_L1_error;
     }
     __pyx_L4_return: {
-      __pyx_t_20 = __pyx_r;
+      __pyx_t_21 = __pyx_r;
       __pyx_r = 0;
       {
         __Pyx_PyThreadState_declare
         __Pyx_PyThreadState_assign
-        __Pyx_ExceptionSave(&__pyx_t_19, &__pyx_t_18, &__pyx_t_8);
+        __Pyx_ExceptionSave(&__pyx_t_20, &__pyx_t_19, &__pyx_t_9);
+        __Pyx_XGOTREF(__pyx_t_20);
         __Pyx_XGOTREF(__pyx_t_19);
-        __Pyx_XGOTREF(__pyx_t_18);
-        __Pyx_XGOTREF(__pyx_t_8);
+        __Pyx_XGOTREF(__pyx_t_9);
         /*try:*/ {
 
-          /* "src/dfit/interrupt.pxi":75
+          /* "src/dfit/interrupt.pxi":78
  *     finally:
  *         try:
  *             async_raise(tid, TimeoutError)             # <<<<<<<<<<<<<<
  *         except (SystemExit, ValueError):
  *             pass
  */
-          __Pyx_TraceLine(75,0,__PYX_ERR(0, 75, __pyx_L24_error))
-          __pyx_t_24 = __Pyx_PyInt_As_PY_LONG_LONG(__pyx_v_tid); if (unlikely((__pyx_t_24 == (PY_LONG_LONG)-1) && PyErr_Occurred())) __PYX_ERR(0, 75, __pyx_L24_error)
-          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_TimeoutError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L24_error)
+          __Pyx_TraceLine(78,0,__PYX_ERR(0, 78, __pyx_L24_error))
+          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_TimeoutError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 78, __pyx_L24_error)
           __Pyx_GOTREF(__pyx_t_3);
           __pyx_t_26.__pyx_n = 1;
           __pyx_t_26.exception = __pyx_t_3;
-          __pyx_t_16 = __pyx_f_4dfit_4dfit_async_raise(__pyx_t_24, &__pyx_t_26); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 75, __pyx_L24_error)
+          __pyx_t_17 = __pyx_f_4dfit_4dfit_async_raise(__pyx_v_tid, &__pyx_t_26); if (unlikely(__pyx_t_17 == ((int)-1))) __PYX_ERR(0, 78, __pyx_L24_error)
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "src/dfit/interrupt.pxi":74
+          /* "src/dfit/interrupt.pxi":77
  *         raise TimeoutError(f"Timeout (taking more than {timeout} sec)")
  *     finally:
  *         try:             # <<<<<<<<<<<<<<
@@ -3946,56 +3945,56 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
  *         except (SystemExit, ValueError):
  */
         }
+        __Pyx_XDECREF(__pyx_t_20); __pyx_t_20 = 0;
         __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
-        __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
-        __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         goto __pyx_L29_try_end;
         __pyx_L24_error:;
-        __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
+        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+        __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-        /* "src/dfit/interrupt.pxi":76
+        /* "src/dfit/interrupt.pxi":79
  *         try:
  *             async_raise(tid, TimeoutError)
  *         except (SystemExit, ValueError):             # <<<<<<<<<<<<<<
  *             pass
  * 
  */
-        __Pyx_TraceLine(76,0,__PYX_ERR(0, 76, __pyx_L26_except_error))
-        __pyx_t_16 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_SystemExit) || __Pyx_PyErr_ExceptionMatches(__pyx_builtin_ValueError);
-        if (__pyx_t_16) {
+        __Pyx_TraceLine(79,0,__PYX_ERR(0, 79, __pyx_L26_except_error))
+        __pyx_t_17 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_SystemExit) || __Pyx_PyErr_ExceptionMatches(__pyx_builtin_ValueError);
+        if (__pyx_t_17) {
           __Pyx_ErrRestore(0,0,0);
           goto __pyx_L25_exception_handled;
         }
         goto __pyx_L26_except_error;
         __pyx_L26_except_error:;
 
-        /* "src/dfit/interrupt.pxi":74
+        /* "src/dfit/interrupt.pxi":77
  *         raise TimeoutError(f"Timeout (taking more than {timeout} sec)")
  *     finally:
  *         try:             # <<<<<<<<<<<<<<
  *             async_raise(tid, TimeoutError)
  *         except (SystemExit, ValueError):
  */
+        __Pyx_XGIVEREF(__pyx_t_20);
         __Pyx_XGIVEREF(__pyx_t_19);
-        __Pyx_XGIVEREF(__pyx_t_18);
-        __Pyx_XGIVEREF(__pyx_t_8);
-        __Pyx_ExceptionReset(__pyx_t_19, __pyx_t_18, __pyx_t_8);
+        __Pyx_XGIVEREF(__pyx_t_9);
+        __Pyx_ExceptionReset(__pyx_t_20, __pyx_t_19, __pyx_t_9);
         goto __pyx_L1_error;
         __pyx_L25_exception_handled:;
+        __Pyx_XGIVEREF(__pyx_t_20);
         __Pyx_XGIVEREF(__pyx_t_19);
-        __Pyx_XGIVEREF(__pyx_t_18);
-        __Pyx_XGIVEREF(__pyx_t_8);
-        __Pyx_ExceptionReset(__pyx_t_19, __pyx_t_18, __pyx_t_8);
+        __Pyx_XGIVEREF(__pyx_t_9);
+        __Pyx_ExceptionReset(__pyx_t_20, __pyx_t_19, __pyx_t_9);
         __pyx_L29_try_end:;
       }
-      __pyx_r = __pyx_t_20;
-      __pyx_t_20 = 0;
+      __pyx_r = __pyx_t_21;
+      __pyx_t_21 = 0;
       goto __pyx_L0;
     }
   }
@@ -4014,14 +4013,13 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
-  __Pyx_XDECREF(__pyx_t_15);
+  __Pyx_XDECREF(__pyx_t_13);
+  __Pyx_XDECREF(__pyx_t_16);
   __Pyx_AddTraceback("dfit.dfit.interrupt_func", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_runner);
-  __Pyx_XDECREF(__pyx_v_tid);
   __Pyx_XDECREF(__pyx_v_resp);
   __Pyx_DECREF(((PyObject *)__pyx_cur_scope));
   __Pyx_XGIVEREF(__pyx_r);
@@ -4030,7 +4028,7 @@ static PyObject *__pyx_pf_4dfit_4dfit_interrupt_func(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "src/dfit/interrupt.pxi":80
+/* "src/dfit/interrupt.pxi":83
  * 
  * 
  * def fake_interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):             # <<<<<<<<<<<<<<
@@ -4109,7 +4107,7 @@ static PyObject *__pyx_pw_4dfit_4dfit_3fake_interrupt_func(PyObject *__pyx_self,
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fake_interrupt_func") < 0)) __PYX_ERR(0, 80, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fake_interrupt_func") < 0)) __PYX_ERR(0, 83, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -4134,14 +4132,14 @@ static PyObject *__pyx_pw_4dfit_4dfit_3fake_interrupt_func(PyObject *__pyx_self,
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("fake_interrupt_func", 0, 1, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 80, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("fake_interrupt_func", 0, 1, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 83, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("dfit.dfit.fake_interrupt_func", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_args), (&PyTuple_Type), 1, "args", 1))) __PYX_ERR(0, 80, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_kwargs), (&PyDict_Type), 1, "kwargs", 1))) __PYX_ERR(0, 80, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_args), (&PyTuple_Type), 1, "args", 1))) __PYX_ERR(0, 83, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_kwargs), (&PyDict_Type), 1, "kwargs", 1))) __PYX_ERR(0, 83, __pyx_L1_error)
   __pyx_r = __pyx_pf_4dfit_4dfit_2fake_interrupt_func(__pyx_self, __pyx_v_func, __pyx_v_args, __pyx_v_kwargs, __pyx_v_timeout, __pyx_v_q);
 
   /* function exit code */
@@ -4163,30 +4161,30 @@ static PyObject *__pyx_pf_4dfit_4dfit_2fake_interrupt_func(CYTHON_UNUSED PyObjec
   int __pyx_clineno = 0;
   __Pyx_TraceFrameInit(__pyx_codeobj__9)
   __Pyx_RefNannySetupContext("fake_interrupt_func", 0);
-  __Pyx_TraceCall("fake_interrupt_func", __pyx_f[0], 80, 0, __PYX_ERR(0, 80, __pyx_L1_error));
+  __Pyx_TraceCall("fake_interrupt_func", __pyx_f[0], 83, 0, __PYX_ERR(0, 83, __pyx_L1_error));
 
-  /* "src/dfit/interrupt.pxi":84
+  /* "src/dfit/interrupt.pxi":87
  *     For debug purpose
  *     """
  *     return func(*args, **kwargs)             # <<<<<<<<<<<<<<
  */
-  __Pyx_TraceLine(84,0,__PYX_ERR(0, 84, __pyx_L1_error))
+  __Pyx_TraceLine(87,0,__PYX_ERR(0, 87, __pyx_L1_error))
   __Pyx_XDECREF(__pyx_r);
   if (unlikely(__pyx_v_args == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-    __PYX_ERR(0, 84, __pyx_L1_error)
+    __PYX_ERR(0, 87, __pyx_L1_error)
   }
   if (unlikely(__pyx_v_kwargs == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "argument after ** must be a mapping, not NoneType");
-    __PYX_ERR(0, 84, __pyx_L1_error)
+    __PYX_ERR(0, 87, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_v_func, __pyx_v_args, __pyx_v_kwargs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_v_func, __pyx_v_args, __pyx_v_kwargs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "src/dfit/interrupt.pxi":80
+  /* "src/dfit/interrupt.pxi":83
  * 
  * 
  * def fake_interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):             # <<<<<<<<<<<<<<
@@ -11498,7 +11496,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 34, __pyx_L1_error)
   __pyx_builtin_SystemError = __Pyx_GetBuiltinName(__pyx_n_s_SystemError); if (!__pyx_builtin_SystemError) __PYX_ERR(0, 39, __pyx_L1_error)
-  __pyx_builtin_SystemExit = __Pyx_GetBuiltinName(__pyx_n_s_SystemExit); if (!__pyx_builtin_SystemExit) __PYX_ERR(0, 76, __pyx_L1_error)
+  __pyx_builtin_SystemExit = __Pyx_GetBuiltinName(__pyx_n_s_SystemExit); if (!__pyx_builtin_SystemExit) __PYX_ERR(0, 79, __pyx_L1_error)
   __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(1, 74, __pyx_L1_error)
   __pyx_builtin_RuntimeWarning = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeWarning); if (!__pyx_builtin_RuntimeWarning) __PYX_ERR(1, 234, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(2, 2, __pyx_L1_error)
@@ -11534,17 +11532,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "src/dfit/interrupt.pxi":54
+  /* "src/dfit/interrupt.pxi":57
  *         q = Queue()
  * 
  *     def runner():             # <<<<<<<<<<<<<<
  *         try:
  *             _res = func(*args, **kwargs)
  */
-  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_n_s_res, __pyx_n_s_ex); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_n_s_res, __pyx_n_s_ex); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_dfit_interrupt_pxi, __pyx_n_s_runner, 54, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_dfit_interrupt_pxi, __pyx_n_s_runner, 57, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 57, __pyx_L1_error)
 
   /* "dfit/dfit.pyx":138
  *             self,
@@ -11627,22 +11625,22 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     """
  *     Threads-based interruptible runner, but is not reliable and works
  */
-  __pyx_tuple__20 = PyTuple_Pack(9, __pyx_n_s_func, __pyx_n_s_args, __pyx_n_s_kwargs, __pyx_n_s_timeout, __pyx_n_s_q, __pyx_n_s_runner, __pyx_n_s_runner, __pyx_n_s_tid, __pyx_n_s_resp); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_tuple__20 = PyTuple_Pack(9, __pyx_n_s_func, __pyx_n_s_args, __pyx_n_s_kwargs, __pyx_n_s_timeout, __pyx_n_s_q, __pyx_n_s_tid, __pyx_n_s_runner, __pyx_n_s_runner, __pyx_n_s_resp); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
   __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(5, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_dfit_interrupt_pxi, __pyx_n_s_interrupt_func, 42, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 42, __pyx_L1_error)
 
-  /* "src/dfit/interrupt.pxi":80
+  /* "src/dfit/interrupt.pxi":83
  * 
  * 
  * def fake_interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):             # <<<<<<<<<<<<<<
  *     """
  *     For debug purpose
  */
-  __pyx_tuple__21 = PyTuple_Pack(5, __pyx_n_s_func, __pyx_n_s_args, __pyx_n_s_kwargs, __pyx_n_s_timeout, __pyx_n_s_q); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_tuple__21 = PyTuple_Pack(5, __pyx_n_s_func, __pyx_n_s_args, __pyx_n_s_kwargs, __pyx_n_s_timeout, __pyx_n_s_q); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_GIVEREF(__pyx_tuple__21);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(5, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_dfit_interrupt_pxi, __pyx_n_s_fake_interrupt_func, 80, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(5, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_dfit_interrupt_pxi, __pyx_n_s_fake_interrupt_func, 83, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 83, __pyx_L1_error)
 
   /* "dfit/dfit.pyx":91
  *     list POPULAR_DISTRIBUTIONS = [
@@ -12479,22 +12477,22 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_interrupt_func, __pyx_t_3) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/dfit/interrupt.pxi":80
+  /* "src/dfit/interrupt.pxi":83
  * 
  * 
  * def fake_interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):             # <<<<<<<<<<<<<<
  *     """
  *     For debug purpose
  */
-  __Pyx_TraceLine(80,0,__PYX_ERR(0, 80, __pyx_L1_error))
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __Pyx_TraceLine(83,0,__PYX_ERR(0, 83, __pyx_L1_error))
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_k__8 = ((PyObject*)__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_4dfit_4dfit_3fake_interrupt_func, NULL, __pyx_n_s_dfit_dfit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_4dfit_4dfit_3fake_interrupt_func, NULL, __pyx_n_s_dfit_dfit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_fake_interrupt_func, __pyx_t_3) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_fake_interrupt_func, __pyx_t_3) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "dfit/dfit.pyx":65
@@ -16078,6 +16076,28 @@ bad:
     Py_XDECREF(py_frame);
 }
 
+/* CIntFromPyVerify */
+  #define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
+    {\
+        func_type value = func_value;\
+        if (sizeof(target_type) < sizeof(func_type)) {\
+            if (unlikely(value != (func_type) (target_type) value)) {\
+                func_type zero = 0;\
+                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
+                    return (target_type) -1;\
+                if (is_unsigned && unlikely(value < zero))\
+                    goto raise_neg_overflow;\
+                else\
+                    goto raise_overflow;\
+            }\
+        }\
+        return (target_type) value;\
+    }
+
 /* CIntToPy */
   static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
     const long neg_one = (long) ((long) 0 - (long) 1), const_zero = (long) 0;
@@ -16108,28 +16128,6 @@ bad:
                                      little, !is_unsigned);
     }
 }
-
-/* CIntFromPyVerify */
-  #define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
-#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
-#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
-    {\
-        func_type value = func_value;\
-        if (sizeof(target_type) < sizeof(func_type)) {\
-            if (unlikely(value != (func_type) (target_type) value)) {\
-                func_type zero = 0;\
-                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
-                    return (target_type) -1;\
-                if (is_unsigned && unlikely(value < zero))\
-                    goto raise_neg_overflow;\
-                else\
-                    goto raise_overflow;\
-            }\
-        }\
-        return (target_type) value;\
-    }
 
 /* Declarations */
   #if CYTHON_CCOMPLEX

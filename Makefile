@@ -1,5 +1,5 @@
 PYTHON?=python3
-PYTESTFLAGS= -m "not slow"
+PYTESTFLAGS= -m "not slow" --cov-report html --cov-report term --cov=dfit  
 SETUPFLAGS=
 
 ifeq ($(OS),Windows_NT) 
