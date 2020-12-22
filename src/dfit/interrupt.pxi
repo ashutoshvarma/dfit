@@ -21,7 +21,7 @@ class TimeoutError(Exception):
     pass
 
 
-cdef int async_raise(long tid, object exception=Exception) except -1:
+cdef int async_raise(unsigned long tid, object exception=Exception) except -1:
     """
     Raise an Exception in the Thread with id `tid`. Perform cleanup if
     needed.
@@ -45,7 +45,7 @@ def interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):
     only if everything is pickable.
     """
     cdef:
-        long tid
+        unsigned long tid
 
     # We run `func` in a thread and block on a queue until timeout
     if not q:
