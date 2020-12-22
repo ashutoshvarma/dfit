@@ -1,5 +1,5 @@
 PYTHON?=python3
-PYTESTFLAGS=
+PYTESTFLAGS= -m "not slow"
 SETUPFLAGS=
 
 ifeq ($(OS),Windows_NT) 
@@ -8,11 +8,9 @@ else
     detected_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
 endif
 
+_CFLAGS += -O0 -g3
 ifeq ($(detected_OS), Windows)
     _CFLAGS += /Od /Zi
-endif
-ifeq ($(detected_OS), Linux)
-    _CFLAGS += -O0 -g3
 endif
 
 
@@ -42,7 +40,7 @@ wheel:
 
 .PHONY: test
 test: inplace
-	$(PYTHON) -m pytest $(TESTFLAGS) $(TESTOPTS) 
+	$(PYTHON) -m pytest $(PYTESTFLAGS)
 
 .PHONY: test_wheel
 test_wheel: wheel	
