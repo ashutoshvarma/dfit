@@ -75,3 +75,10 @@ def interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):
             async_raise(tid, TimeoutError)
         except (SystemExit, ValueError):
             pass
+
+
+def fake_interrupt_func(func, tuple args=(), dict kwargs={}, timeout=30, q=None):
+    """
+    For debug purpose
+    """
+    return func(*args, **kwargs)

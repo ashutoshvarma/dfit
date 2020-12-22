@@ -30,7 +30,7 @@ jobs:
     CIBW_TEST_EXTRAS: test
     CIBW_MANYLINUX_X86_64_IMAGE: manylinux2010
     CIBW_MANYLINUX_I686_IMAGE: manylinux2010
-    CIBW_SKIP: "?p27* pp* cp34-* cp35-* cp37-manylinux_i686"
+    CIBW_SKIP: "?p27* pp* cp34-* cp35-* "
     CIBW_BUILD_VERBOSITY: 1
   steps:
     - task: UsePythonVersion@0

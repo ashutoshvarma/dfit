@@ -235,7 +235,7 @@ cdef class DFit:
 
         dist = _ALL_DISTS[distribution]
         try:
-            param = interrupt_func(dist.fit, args=(self._trim_data, ), timeout=self.timeout)
+            param = fake_interrupt_func(dist.fit, args=(self._trim_data, ), timeout=self.timeout)
             # assuming the `fit` return param in same order as in pdf
             _freeze_dist = dist(*param)
 
