@@ -1,5 +1,4 @@
 include COPYING
 include CHANGELOG.md
 include README.rst
-include versioneer.py
-include src/dfit/_version.py
+include src/dfit/_static_version.py

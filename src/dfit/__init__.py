@@ -13,8 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from ._version import get_versions
+from ._version import __version__
 from .dfit import DFit, get_distributions
 
-__version__ = get_versions()["version"]
-del get_versions
+del _version

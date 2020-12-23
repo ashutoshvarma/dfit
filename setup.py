@@ -3,14 +3,13 @@ import builtins
 import os
 import sys
 from pathlib import Path
+from importlib.util import module_from_spec, spec_from_file_location
 
 from setuptools import Extension, setup
 
 from setuptools.command.build_ext import build_ext as _build_ext
 
 from distutils.errors import DistutilsOptionError
-
-import versioneer
 
 try:
     from Cython.Build import cythonize
@@ -19,9 +18,9 @@ try:
 except ImportError:
     CYTHON_INSTALLED = False
 
-
+PACKAGE_NAME = "dfit"
 COMPILED_MODULES = [
-    "dfit.dfit",
+    f"{PACKAGE_NAME}.dfit",
 ]
 SOURCE_PATH = Path("src")
 
@@ -140,8 +139,19 @@ class build_ext(_build_ext):
         self.include_dirs.append(numpy.get_include())
 
 
-cmdclass = versioneer.get_cmdclass({"build_ext": build_ext})
+# Loads _version.py module without importing the whole package.
+def get_version_and_cmdclass():
+    spec = spec_from_file_location(
+        "version", Path(SOURCE_PATH, PACKAGE_NAME, "_version.py")
+    )
+    module = module_from_spec(spec)
+    spec.loader.exec_module(module)
+    cmdclass = module.cmdclass
+    cmdclass["build_ext"] = build_ext
+    return module.__version__, cmdclass
 
+
+version, cmdclass = get_version_and_cmdclass()
 
 # Give setuptools a hint to complain if it's too old a version
 # 30.3.0 allows us to put most metadata in setup.cfg
@@ -159,5 +169,6 @@ if __name__ == "__main__":
     setup(
         ext_modules=get_ext_modules(),
         setup_requires=SETUP_REQUIRES,
+        version=version,
         cmdclass=cmdclass,
     )

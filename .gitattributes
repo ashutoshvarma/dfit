@@ -1,1 +1,1 @@
-src/dfit/_version.py export-subst
+src/dfit/_static_version.py export-subst
