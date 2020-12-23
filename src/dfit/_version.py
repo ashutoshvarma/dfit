@@ -127,13 +127,13 @@ def get_version_from_git():
     else:
         labels.append(git)
 
-    try:
-        p = subprocess.Popen(["git", "diff", "--quiet"], cwd=distr_root)
-    except OSError:
-        labels.append("confused")  # This should never happen.
-    else:
-        if p.wait() == 1:
-            labels.append("dirty")
+    # try:
+    #     p = subprocess.Popen(["git", "diff", "--quiet"], cwd=distr_root)
+    # except OSError:
+    #     labels.append("confused")  # This should never happen.
+    # else:
+    #     if p.wait() == 1:
+    #         labels.append("dirty")
 
     return Version(release, dev, labels)
 
