@@ -134,8 +134,9 @@ class build_ext(_build_ext):
 
         self.include_dirs.append(numpy.get_include())
 
-cmdclass = versioneer.get_cmdclass()
-cmdclass.update(build_ext=build_ext)
+
+cmdclass = versioneer.get_cmdclass({"build_ext": build_ext})
+
 
 # Give setuptools a hint to complain if it's too old a version
 # 30.3.0 allows us to put most metadata in setup.cfg
