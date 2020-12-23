@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 from setuptools import Extension, setup
+
 from setuptools.command.build_ext import build_ext as _build_ext
 
 from distutils.errors import DistutilsOptionError
@@ -104,9 +105,13 @@ def get_ext_modules():
     result = []
     for m, src in modules.items():
         if not src.is_file():
-            raise RuntimeError(
-                f"ERROR: Trying to build but '{src}'" " is not available"
-            )
+            if src.suffix == ".pyx":
+                print("WARNING: {} not found. Using pre-generated cpp file")
+                src = src.with_suffix(".cpp")
+            if not src.is_file():
+                raise RuntimeError(
+                    f"ERROR: Trying to build but '{src}'" " is not available"
+                )
         result.append(
             Extension(
                 m,
