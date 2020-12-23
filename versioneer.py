@@ -1558,6 +1558,10 @@ def get_cmdclass(cmdclass=None):
             root = get_root()
             cfg = get_config_from_root(root)
             versions = get_versions()
+            self._versioneer_generated_versions = versions
+            # unless we update this, the command will keep using the old
+            # version
+            self.distribution.metadata.version = versions["version"]
             _build_py.run(self)
             # now locate _version.py in the new build/ directory and replace
             # it with an updated value
